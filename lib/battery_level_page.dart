@@ -12,28 +12,27 @@ class _BatteryLevelPageState extends State<BatteryLevelPage> {
   BatteryState _batteryState;
   int _batteryLevel;
 
-  @override
-  void initState() {
-    super.initState();
+  void _getBatteryLevel() async {
+    var level;
 
-    _battery.batteryLevel.then((level) {
-      this.setState(() {
-        _batteryLevel = level;
-      });
+    level = await _battery.batteryLevel;
+
+    this.setState(() {
+      _batteryLevel = level;
     });
 
-    _battery.onBatteryStateChanged.listen((BatteryState state) {
-      _battery.batteryLevel.then((level) {
-        this.setState(() {
-          _batteryLevel = level;
-          _batteryState = state;
-        });
+    _battery.onBatteryStateChanged.listen((BatteryState state) async {
+      level = await _battery.batteryLevel;
+      this.setState(() {
+        _batteryLevel = level;
+        _batteryState = state;
       });
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    _getBatteryLevel();
     return Text(_batteryLevel.toString());
   }
 }
