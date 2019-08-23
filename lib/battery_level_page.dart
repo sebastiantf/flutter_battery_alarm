@@ -9,7 +9,7 @@ class BatteryLevelPage extends StatefulWidget {
 class _BatteryLevelPageState extends State<BatteryLevelPage> {
   final Battery _battery = Battery();
 
-  BatteryState _batteryState;
+  String _batteryState;
   int _batteryLevel;
 
   void _getBatteryLevel() async {
@@ -25,7 +25,7 @@ class _BatteryLevelPageState extends State<BatteryLevelPage> {
       level = await _battery.batteryLevel;
       this.setState(() {
         _batteryLevel = level;
-        _batteryState = state;
+        _batteryState = _parseBatteryState(state);
       });
     });
   }
@@ -36,8 +36,33 @@ class _BatteryLevelPageState extends State<BatteryLevelPage> {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[Text(_batteryLevel.toString())],
+        children: <Widget>[
+          Text(
+            _batteryLevel.toString() + "%",
+            style: TextStyle(fontSize: 40),
+          ),
+          Text(
+            _batteryState.toString(),
+            style: TextStyle(fontSize: 30),
+          )
+        ],
       ),
     );
+  }
+
+  String _parseBatteryState(BatteryState state) {
+    var stateString;
+    switch (state) {
+      case BatteryState.charging:
+        stateString = "Charging";
+        break;
+      case BatteryState.discharging:
+        stateString = "Discharging";
+        break;
+      case BatteryState.full:
+        stateString = "Fully Charged";
+        break;
+    }
+    return stateString;
   }
 }
