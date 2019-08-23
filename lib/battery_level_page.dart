@@ -33,6 +33,11 @@ class _BatteryLevelPageState extends State<BatteryLevelPage> {
   @override
   Widget build(BuildContext context) {
     _getBatteryLevel();
-    return Text(_batteryLevel.toString());
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[Text(_batteryLevel.toString())],
+      ),
+    );
   }
 }
