@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_battery_alarm/battery_level_page.dart';
+import 'package:Battery_Alarm/battery_level_page.dart';
 
 void main() {
   return runApp(MaterialApp(

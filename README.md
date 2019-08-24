@@ -1,4 +1,4 @@
-# flutter_battery_alarm
+# Battery Alarm
 
 A new Flutter project.
 
