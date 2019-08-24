@@ -1,4 +1,4 @@
-package com.example.flutter_battery_alarm;
+package com.seb.batteryalarm;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
