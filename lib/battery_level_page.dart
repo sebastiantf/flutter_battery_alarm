@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:battery/battery.dart';
+import 'package:ringtone/ringtone.dart';
 
 class BatteryLevelPage extends StatefulWidget {
   @override
@@ -27,6 +28,11 @@ class _BatteryLevelPageState extends State<BatteryLevelPage> {
         _batteryLevel = level;
         _batteryState = _parseBatteryState(state);
       });
+      if (state == BatteryState.full) {
+        Ringtone.play();
+      } else {
+        Ringtone.stop();
+      }
     });
   }
 
