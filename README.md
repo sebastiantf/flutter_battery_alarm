@@ -1,6 +1,13 @@
-# Battery Alarm
+# <img src="icon/icon.png" height="40em" align="top" style="padding-right:5px"/> Battery Alarm
 
-A new Flutter project.
+An app that alerts you by playing ringtone when the battery is fully charged. Helpful to prevent your phone from overcharging.
+
+It also displays the current battery level and battery status.
+
+### Screenshots:
+
+<img src="screenshots/flutter_battery_alarm.charging.jpg" height="300em" />
+<img src="screenshots/flutter_battery_alarm.discharging.jpg" height="300em" />
 
 ## Getting Started
 
