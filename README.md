@@ -6,8 +6,7 @@ It also displays the current battery level and battery status.
 
 ### Screenshots:
 
-<img src="screenshots/flutter_battery_alarm.charging.jpg" height="300em" />
-<img src="screenshots/flutter_battery_alarm.discharging.jpg" height="300em" />
+<img src="screenshots/flutter_battery_alarm.charging.jpg" height="300em" /> <img src="screenshots/flutter_battery_alarm.discharging.jpg" height="300em" />
 
 ## Getting Started
 
